@@ -20,8 +20,7 @@ public class Sound
       if (samples[i] > limit) {
         samples[i] = limit;
         count++;
-      }
-      if (samples[i] < -limit) {
+      } else if (samples[i] < -limit) {
         samples[i] = -limit;
         count++;
       }
@@ -43,7 +42,7 @@ public class Sound
       index++;
     }
     int [] c = new int [samples.length-index];
-    for (int i = 0; i < samples.length; i++) {
+    for (int i = 0; i < c.length; i++) {
       c[i] = samples[i + index];
     }
     samples = c;
